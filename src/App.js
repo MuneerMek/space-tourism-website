@@ -1,7 +1,8 @@
 import React from "react";
 import Home from "./Home";
+import Design from "./Design";
 
-const App = () => <Home />;
+const App = () => <Design />;
 
 export default App;
 
