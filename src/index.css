@@ -1,3 +1,6 @@
+/* ------------------- */
+/* Reset               */
+/* ------------------- */
 /* Use a more-intuitive box-sizing model. */
 *,
 *::before,
@@ -47,4 +50,39 @@ select {
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+}
+/* ------------------- */
+/* Utility Classes     */
+/* ------------------- */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.container {
+  margin-inline: auto;
+  padding-inline: 2em;
+  max-width: 80rem;
+}
+/* Screen reader utility class */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap; /* added line */
+  border: 0;
+}
+
+.box {
+  background-color: lightblue;
+  padding: 3rem;
 }
