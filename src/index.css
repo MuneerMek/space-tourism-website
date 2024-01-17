@@ -22,9 +22,11 @@
   --ff-sans-cond: "Barlow Condensed", sans-serif;
   --ff-sans-normal: "Barlow", sans-serif;
 }
+
 /* ------------------- */
 /* Reset               */
 /* ------------------- */
+
 /* Use a more-intuitive box-sizing model. */
 *,
 *::before,
@@ -103,6 +105,10 @@ select {
 .grid {
   display: grid;
   gap: var(--gap, 1rem);
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1rem);
 }
 
 .container {

@@ -5,12 +5,12 @@ const Design = () => {
     <div className="container">
       <h1 className="uppercase">Design system</h1>
 
-      <section id="colors" style={{ margin: "4rem 0" }}>
+      <section className="flow" id="colors" style={{ margin: "4rem 0" }}>
         <h2 className="numbered-title">
           <span>01</span> colors
         </h2>
         <div className="flex">
-          <div style={{ flexGrow: 1 }}>
+          <div className="flow" style={{ flexGrow: 1 }}>
             <div
               className="bg-dark text-white ff-serif fs-500"
               style={{ padding: "3rem 1rem 1rem", border: "1px solid white" }}
@@ -24,7 +24,7 @@ const Design = () => {
               <span className="text-light">HSL</span> 230°, 35%, 7%
             </p>
           </div>
-          <div style={{ flexGrow: 1 }}>
+          <div className="flow" style={{ flexGrow: 1 }}>
             <div
               className="bg-light text-dark ff-serif fs-500"
               style={{ padding: "3rem 1rem 1rem", border: "1px solid white" }}
@@ -38,7 +38,7 @@ const Design = () => {
               <span className="text-light">HSL</span> 231°, 77%, 90%
             </p>
           </div>
-          <div style={{ flexGrow: 1 }}>
+          <div className="flow" style={{ flexGrow: 1 }}>
             <div
               className="bg-white text-dark ff-serif fs-500"
               style={{ padding: "3rem 1rem 1rem", border: "1px solid white" }}
@@ -60,7 +60,10 @@ const Design = () => {
           <span>02 </span>Typography
         </h2>
         <div className="flex">
-          <div style={{ flexBasis: "100%" }}>
+          <div
+            className="flow"
+            style={{ flexBasis: "100%", "--flow-space": "4rem" }}
+          >
             <div>
               <p className="text-light">
                 Heading 1 - Bellefair Regular - 150px
@@ -94,7 +97,10 @@ const Design = () => {
             </div>
           </div>
 
-          <div style={{ flexBasis: "100%" }}>
+          <div
+            className="flow"
+            style={{ flexBasis: "100%", "--flow-space": "4rem" }}
+          >
             <div>
               <p className="text-light">
                 Subheading 1 - Bellefair Regular - 28px
