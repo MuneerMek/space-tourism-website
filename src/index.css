@@ -244,4 +244,5 @@ select {
 }
 
 .large-button:hover {
+  border: 3em solid hsl(var(--clr-dark) / 0.9);
 }
