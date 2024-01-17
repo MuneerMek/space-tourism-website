@@ -262,3 +262,27 @@ select {
   opacity: 1;
   transform: scale(1.5);
 }
+
+.primary-navigation {
+  --gap: 8rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.primary-navigation a {
+  font-family: var(--ff-sans-cond);
+  font-size: var(--fs-300);
+  text-decoration: none;
+}
+
+.primary-navigation a > span {
+  margin-right: 0.5em;
+  font-weight: 700;
+}
+
+.underline-indicators > * {
+}
+
+.underline-indicators active {
+}
