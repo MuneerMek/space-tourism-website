@@ -1,6 +1,7 @@
 /* ------------------- */
 /* Custom properties   */
 /* ------------------- */
+
 :root {
   /* colors */
   --clr-dark: 230 35% 7%;
@@ -226,4 +227,21 @@ select {
   margin-right: 0.5em;
   font-weight: 700;
   color: hsl(var(--clr-white) / 0.25);
+}
+
+/* ------------------- */
+/* Components          */
+/* ------------------- */
+
+.large-button {
+  display: grid;
+  place-items: center;
+  padding: 0 2em;
+  border-radius: 50%;
+  aspect-ratio: 1;
+  letter-spacing: 2px;
+  text-decoration: none;
+}
+
+.large-button:hover {
 }

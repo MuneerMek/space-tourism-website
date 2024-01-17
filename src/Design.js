@@ -146,6 +146,34 @@ const Design = () => {
           </div>
         </div>
       </section>
+      <section className="flow" id="interactive-elements">
+        <h2 className="numbered-title">
+          <span>03</span> Interactive elements
+        </h2>
+
+        {/* <!-- navigation --> */}
+        <div></div>
+
+        <div className="flex">
+          <div style={{ marginTop: "5rem" }}>
+            {/* <!-- explore button --> */}
+            <a
+              href="#"
+              className="large-button uppercase fs-600 ff-serif text-dark bg-white"
+            >
+              Explore
+            </a>
+          </div>
+
+          <div style={{ marginBottom: "50vh" }}>
+            {/* <!-- Tabs --> */}
+
+            {/* <!-- Dots --> */}
+
+            {/* <!-- Numbers --> */}
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
