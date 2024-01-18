@@ -186,7 +186,11 @@ const Design = () => {
 
           <div style={{ marginBottom: "50vh" }}>
             {/* <!-- Tabs --> */}
-
+            <div className="tabs flex">
+              <button className="uppercase active">Moon</button>
+              <button className="uppercase">Mars</button>
+              <button className="uppercase">Europa</button>
+            </div>
             {/* <!-- Dots --> */}
 
             {/* <!-- Numbers --> */}
