@@ -155,17 +155,26 @@ const Design = () => {
           <nav>
             <ul className="primary-navigation underline-indicators flex">
               <li className="active">
-                <a className="text-white uppercase letter-spacing-2" href="#">
+                <a
+                  className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
+                  href="#"
+                >
                   <span>00</span>Active
                 </a>
               </li>
               <li>
-                <a className="text-white uppercase letter-spacing-2" href="#">
+                <a
+                  className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
+                  href="#"
+                >
                   <span>01</span>Hovered
                 </a>
               </li>
               <li>
-                <a className="text-white uppercase letter-spacing-2" href="#">
+                <a
+                  className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
+                  href="#"
+                >
                   <span>02</span>Idle
                 </a>
               </li>
@@ -186,10 +195,25 @@ const Design = () => {
 
           <div style={{ marginBottom: "50vh" }}>
             {/* <!-- Tabs --> */}
-            <div className="tabs flex">
-              <button className="uppercase active">Moon</button>
-              <button className="uppercase">Mars</button>
-              <button className="uppercase">Europa</button>
+            <div className="tab-list underline-indicators flex">
+              <button
+                aria-selected="true"
+                className="uppercase text-light bg-dark ff-sans-cond fs-300 letter-spacing-2"
+              >
+                Moon
+              </button>
+              <button
+                aria-selected="false"
+                className="uppercase text-light bg-dark ff-sans-cond fs-300 letter-spacing-2"
+              >
+                Mars
+              </button>
+              <button
+                aria-selected="false"
+                className="uppercase text-light bg-dark ff-sans-cond fs-300 letter-spacing-2"
+              >
+                Europa
+              </button>
             </div>
             {/* <!-- Dots --> */}
 
