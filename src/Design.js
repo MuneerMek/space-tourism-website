@@ -193,7 +193,10 @@ const Design = () => {
             </a>
           </div>
 
-          <div style={{ marginBottom: "50vh" }}>
+          <div
+            className="flow"
+            style={{ marginBottom: "50vh", "--flow-space": "4rem" }}
+          >
             {/* <!-- Tabs --> */}
             <div className="tab-list underline-indicators flex">
               <button
@@ -216,7 +219,17 @@ const Design = () => {
               </button>
             </div>
             {/* <!-- Dots --> */}
-
+            <div className="dot-indicators flex">
+              <button aria-selected="true">
+                <span className="sr-only">Slide title</span>
+              </button>
+              <button aria-selected="false">
+                <span className="sr-only">Slide title</span>
+              </button>
+              <button aria-selected="false">
+                <span className="sr-only">Slide title</span>
+              </button>
+            </div>
             {/* <!-- Numbers --> */}
           </div>
         </div>
