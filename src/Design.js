@@ -188,7 +188,10 @@ const Design = () => {
           </p>
         </div>
 
-        <div className="flex" style={{ justifyContent: "space-around" }}>
+        <div
+          className="flex"
+          style={{ justifyContent: "space-around", marginBottom: "50vh" }}
+        >
           <div style={{ marginTop: "5rem" }}>
             {/* <!-- explore button --> */}
             <div>
@@ -233,10 +236,7 @@ const Design = () => {
             </div>
           </div>
 
-          <div
-            className="flow"
-            style={{ marginBottom: "50vh", "--flow-space": "11.6rem" }}
-          >
+          <div className="flow" style={{ "--flow-space": "11.6rem" }}>
             {/* <!-- Tabs --> */}
             <div className="tab-list underline-indicators flex">
               <button
