@@ -152,7 +152,7 @@ const Design = () => {
         </h2>
         {/* navigation */}
         <div>
-          <nav>
+          <nav className="grid">
             <ul className="primary-navigation underline-indicators flex">
               <li className="active">
                 <a
@@ -180,22 +180,62 @@ const Design = () => {
               </li>
             </ul>
           </nav>
+          <p
+            className="text-light"
+            style={{ marginTop: "1rem", textAlign: "center" }}
+          >
+            Different States of Navigation Bar
+          </p>
         </div>
 
-        <div className="flex">
+        <div className="flex" style={{ justifyContent: "space-around" }}>
           <div style={{ marginTop: "5rem" }}>
             {/* <!-- explore button --> */}
-            <a
-              href="#"
-              className="large-button uppercase fs-600 ff-serif text-dark bg-white"
+            <div>
+              <a
+                href="#"
+                className="uppercase fs-600 ff-serif text-dark bg-white"
+                style={{
+                  position: "relative",
+                  display: "grid",
+                  zIndex: 1,
+                  placeItems: "center",
+                  padding: "0 2em",
+                  borderRadius: "50%",
+                  aspectRatio: 1,
+                  letterSpacing: "2px",
+                  textDecoration: "none",
+                }}
+              >
+                Explore
+              </a>
+            </div>
+            <p
+              className="text-light"
+              style={{ marginTop: "1rem", textAlign: "center" }}
             >
-              Explore
-            </a>
+              Landing Page Main Button - Idle
+            </p>
+            <div style={{ marginTop: "5rem" }}>
+              {/* <!-- explore button --> */}
+              <a
+                href="#"
+                className="large-button uppercase fs-600 ff-serif text-dark bg-white"
+              >
+                Explore
+              </a>
+              <p
+                className="text-light"
+                style={{ marginTop: "5rem", textAlign: "center" }}
+              >
+                Landing Page Main Button - Hover
+              </p>
+            </div>
           </div>
 
           <div
             className="flow"
-            style={{ marginBottom: "50vh", "--flow-space": "4rem" }}
+            style={{ marginBottom: "50vh", "--flow-space": "11.6rem" }}
           >
             {/* <!-- Tabs --> */}
             <div className="tab-list underline-indicators flex">
@@ -218,6 +258,12 @@ const Design = () => {
                 Europa
               </button>
             </div>
+            <p
+              className="text-light"
+              style={{ marginTop: "1rem", textAlign: "center" }}
+            >
+              Tabs (Active, Hover, & Idle)
+            </p>
             {/* <!-- Dots --> */}
             <div className="dot-indicators flex">
               <button aria-selected="true">
@@ -230,7 +276,30 @@ const Design = () => {
                 <span className="sr-only">Slide title</span>
               </button>
             </div>
+            <p
+              className="text-light"
+              style={{ marginTop: "1rem", textAlign: "center" }}
+            >
+              Slider 1 States (Active, Hover, & Idle)
+            </p>
             {/* <!-- Numbers --> */}
+            <div className="numbered-indicators ff-serif fs-600 flex">
+              <button aria-selected="true">
+                <span>1</span>
+              </button>
+              <button aria-selected="false">
+                <span>2</span>
+              </button>
+              <button aria-selected="false">
+                <span>3</span>
+              </button>
+            </div>
+            <p
+              className="text-light"
+              style={{ marginTop: "1rem", textAlign: "center" }}
+            >
+              Slider 2 States (Active, Hover, & Idle)
+            </p>
           </div>
         </div>
       </section>

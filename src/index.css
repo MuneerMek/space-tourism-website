@@ -263,9 +263,15 @@ select {
   transform: scale(1.5);
 }
 
+nav {
+  place-items: center;
+  background: hsl(var(--clr-white) / 0.05);
+}
+
 .primary-navigation {
   --gap: 8rem;
   --underline-gap: 2rem;
+  justify-content: space-around;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -301,6 +307,11 @@ select {
 .tab-list {
   --gap: 2rem;
   --underline-gap: 0.5rem;
+  justify-content: center;
+}
+
+.dot-indicators {
+  place-content: center;
 }
 
 .dot-indicators > * {
@@ -319,4 +330,31 @@ select {
 
 .dot-indicators > [aria-selected="true"] {
   background-color: hsl(var(--clr-white));
+}
+
+.numbered-indicators {
+  --gap: 2rem;
+  flex-direction: column;
+  place-items: center;
+}
+
+.numbered-indicators > * {
+  cursor: pointer;
+  aspect-ratio: 1;
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  border: 1px solid hsl(var(--clr-white) / 0.25);
+  background-color: hsl(var(--clr-dark));
+  color: hsl(var(--clr-white));
+}
+
+.numbered-indicators > *:hover,
+.numbered-indicators > *:focus {
+  border: 1px solid hsl(var(--clr-white));
+}
+
+.numbered-indicators > [aria-selected="true"] {
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-dark));
 }
