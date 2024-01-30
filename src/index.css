@@ -137,11 +137,9 @@ select {
 .bg-dark {
   background-color: hsl(var(--clr-dark));
 }
-
 .bg-light {
   background-color: hsl(var(--clr-light));
 }
-
 .bg-white {
   background-color: hsl(var(--clr-white));
 }
@@ -149,11 +147,9 @@ select {
 .text-dark {
   color: hsl(var(--clr-dark));
 }
-
 .text-light {
   color: hsl(var(--clr-light));
 }
-
 .text-white {
   color: hsl(var(--clr-white));
 }
@@ -263,15 +259,9 @@ select {
   transform: scale(1.5);
 }
 
-nav {
-  place-items: center;
-  background: hsl(var(--clr-white) / 0.05);
-}
-
 .primary-navigation {
   --gap: 8rem;
   --underline-gap: 2rem;
-  justify-content: space-around;
   list-style: none;
   padding: 0;
   margin: 0;
@@ -306,12 +296,6 @@ nav {
 
 .tab-list {
   --gap: 2rem;
-  --underline-gap: 0.5rem;
-  justify-content: center;
-}
-
-.dot-indicators {
-  place-content: center;
 }
 
 .dot-indicators > * {

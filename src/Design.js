@@ -152,7 +152,13 @@ const Design = () => {
         </h2>
         {/* navigation */}
         <div>
-          <nav className="grid">
+          <nav
+            style={{
+              display: "grid",
+              placeItems: "center",
+              background: "hsl(var(--clr-white) / 0.05)",
+            }}
+          >
             <ul className="primary-navigation underline-indicators flex">
               <li className="active">
                 <a
@@ -238,7 +244,10 @@ const Design = () => {
 
           <div className="flow" style={{ "--flow-space": "11.6rem" }}>
             {/* <!-- Tabs --> */}
-            <div className="tab-list underline-indicators flex">
+            <div
+              className="tab-list underline-indicators flex"
+              style={{ "--underline-gap": "0.5rem", justifyContent: "center" }}
+            >
               <button
                 aria-selected="true"
                 className="uppercase text-light bg-dark ff-sans-cond fs-300 letter-spacing-2"
@@ -265,7 +274,10 @@ const Design = () => {
               Tabs (Active, Hover, & Idle)
             </p>
             {/* <!-- Dots --> */}
-            <div className="dot-indicators flex">
+            <div
+              className="dot-indicators flex"
+              style={{ placeContent: "center" }}
+            >
               <button aria-selected="true">
                 <span className="sr-only">Slide title</span>
               </button>
