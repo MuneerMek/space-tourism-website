@@ -1,6 +1,9 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Home from "./Home";
+import Crew from "./Crew";
+import Destination from "./Destination";
+import Technology from "./Technology";
 
 const App = () => (
   <>
@@ -19,7 +22,7 @@ const App = () => (
             </li>
             <li>
               <Link
-                to="/"
+                to="/destination"
                 className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
               >
                 <span>01</span>Destination
@@ -27,7 +30,7 @@ const App = () => (
             </li>
             <li>
               <Link
-                to="/"
+                to="/crew"
                 className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
               >
                 <span>02</span>Crew
@@ -35,7 +38,7 @@ const App = () => (
             </li>
             <li>
               <Link
-                to="/"
+                to="/technology"
                 className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
               >
                 <span>03</span>Technology
@@ -47,6 +50,9 @@ const App = () => (
     </div>
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/destination" element={<Destination />} />
+      <Route path="/crew" element={<Crew />} />
+      <Route path="/technology" element={<Technology />} />
     </Routes>
   </>
 );
