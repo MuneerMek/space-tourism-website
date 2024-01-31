@@ -7,47 +7,51 @@ import Technology from "./Technology";
 
 const App = () => (
   <>
-    <div className="container">
-      <header className="primary-header">
-        <div></div>
-        <nav>
-          <ul className="primary-navigation underline-indicators flex">
-            <li className="active">
-              <Link
-                to="/"
-                className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
-              >
-                <span>00</span>Home
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/destination"
-                className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
-              >
-                <span>01</span>Destination
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/crew"
-                className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
-              >
-                <span>02</span>Crew
-              </Link>
-            </li>
-            <li>
-              <Link
-                to="/technology"
-                className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
-              >
-                <span>03</span>Technology
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
-    </div>
+    <header className="primary-header flex">
+      <div>
+        <img
+          className="logo"
+          src="assets/shared/logo.svg"
+          alt="space tourism logo"
+        ></img>
+      </div>
+      <nav>
+        <ul className="primary-navigation underline-indicators flex">
+          <li className="active">
+            <Link
+              to="/"
+              className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
+            >
+              <span>00</span>Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/destination"
+              className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
+            >
+              <span>01</span>Destination
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/crew"
+              className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
+            >
+              <span>02</span>Crew
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/technology"
+              className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
+            >
+              <span>03</span>Technology
+            </Link>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/destination" element={<Destination />} />

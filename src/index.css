@@ -62,7 +62,12 @@ body {
   font-family: var(--ff-sans-normal);
   font-size: var(--fs-400);
   line-height: 1.5;
+}
+/* Root div template */
+#root {
   min-height: 100vh;
+  display: grid;
+  grid-template-rows: min-content 1fr;
 }
 /* Improve media defaults */
 img,
@@ -116,6 +121,22 @@ select {
   margin-inline: auto;
   padding-inline: 2em;
   max-width: 80rem;
+}
+
+.grid-container {
+  display: grid;
+  column-gap: var(--container-gap, 2rem);
+  grid-template-columns: minmax(2em, 1fr) repeat(2, minmax(0px, 40rem)) minmax(
+      2em,
+      1fr
+    );
+}
+
+.grid-container > *:first-child {
+  grid-column: 2;
+}
+.grid-container > *:last-child {
+  grid-column: 3;
 }
 
 /* Screen reader utility class */
@@ -231,7 +252,7 @@ select {
 
 .large-button {
   position: relative;
-  display: grid;
+  display: inline-grid;
   z-index: 1;
   place-items: center;
   padding: 0 2em;
