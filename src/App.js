@@ -15,8 +15,16 @@ const App = () => (
           alt="space tourism logo"
         ></img>
       </div>
+      <button className="mobile-nav-toggle" aria-controls="primary-navigation">
+        <span className="sr-only" aria-expanded="false">
+          Menu
+        </span>
+      </button>
       <nav>
-        <ul className="primary-navigation underline-indicators flex">
+        <ul
+          id="primary-navigation"
+          className="primary-navigation underline-indicators flex"
+        >
           <li className="active">
             <Link
               to="/"
