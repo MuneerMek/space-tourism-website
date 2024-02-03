@@ -15,7 +15,7 @@ const App = () => (
           alt="space tourism logo"
         ></img>
       </div>
-      <nav>
+      {/* <nav>
         <ul className="primary-navigation underline-indicators flex">
           <li className="active">
             <Link
@@ -50,7 +50,7 @@ const App = () => (
             </Link>
           </li>
         </ul>
-      </nav>
+      </nav> */}
     </header>
     <Routes>
       <Route path="/" element={<Home />} />

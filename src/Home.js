@@ -3,12 +3,12 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div className="grid-container">
+    <div className="grid-container grid-container--home">
       <div>
         <h1 className="uppercase text-light fs-500 ff-sans-cond letter-spacing-1">
-          So, you want to travel to{" "}
+          So, you want to travel to
           <span
-            className="text-white fs-900 ff-serif"
+            className="text-white fs-900 ff-serif d-block"
             style={{ letterSpacing: 0 }}
           >
             Space
@@ -24,7 +24,7 @@ const Home = () => {
       <div>
         <Link
           to="/destination"
-          className="large-button uppercase fs-600 ff-serif text-dark bg-white"
+          className="large-button uppercase ff-serif text-dark bg-white"
         >
           Explore
         </Link>

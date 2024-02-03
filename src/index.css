@@ -9,7 +9,7 @@
   --clr-white: 0 0% 100%;
 
   /* font-sizes [--fs-400 is base]*/
-  --fs-900: 5rem;
+  --fs-900: clamp(5rem, 8vw + 1rem, 9.375rem);
   --fs-800: 3.5rem;
   --fs-700: 1.5rem;
   --fs-600: 1rem;
@@ -26,7 +26,6 @@
 
 @media (min-width: 35em) {
   :root {
-    --fs-900: 9.375rem;
     --fs-800: 5rem;
     --fs-700: 2.5rem;
     --fs-600: 1.5rem;
@@ -132,6 +131,10 @@ select {
   gap: var(--gap, 1rem);
 }
 
+.d-block {
+  display: block;
+}
+
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 1rem);
 }
@@ -145,6 +148,20 @@ select {
 .grid-container {
   border: 5px solid limegreen;
   display: grid;
+  text-align: center;
+  place-items: center;
+  padding-inline: 1rem;
+}
+
+.grid-container * {
+  max-width: 50ch;
+}
+
+.grid-container > *:first-child {
+  outline: 1px solid red;
+}
+.grid-container > *:last-child {
+  outline: 1px solid yellow;
 }
 
 @media (min-width: 45em) {
@@ -154,6 +171,7 @@ select {
         2em,
         1fr
       );
+    text-align: left;
   }
   .grid-container > *:first-child {
     grid-column: 2;
@@ -162,6 +180,10 @@ select {
   .grid-container > *:last-child {
     grid-column: 3;
     outline: 1px solid yellow;
+  }
+  .grid-container--home {
+    padding-bottom: max(6rem, 20vh);
+    align-items: end;
   }
 }
 
@@ -277,6 +299,7 @@ select {
 /* ------------------- */
 
 .large-button {
+  font-size: 2rem;
   position: relative;
   display: inline-grid;
   z-index: 1;
