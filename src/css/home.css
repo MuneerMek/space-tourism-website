@@ -8,6 +8,8 @@ body {
 }
 @media (min-width: 35rem) {
   body {
+    background-position: center center;
+
     background-image: url(/public/assets/home/background-home-tablet.jpg);
   }
 }
