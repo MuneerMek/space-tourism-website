@@ -319,17 +319,11 @@ select {
   transform: scale(1.5);
 }
 
-.primary-header {
-  justify-content: flex-end;
-}
-
 .primary-navigation {
-  --gap: 8rem;
   --underline-gap: 2rem;
   list-style: none;
   padding: 0;
   margin: 0;
-  flex-flow: column;
 }
 
 .primary-navigation a {
@@ -357,6 +351,27 @@ select {
 .underline-indicators > [aria-selected="true"] {
   color: var(--clr-white);
   border-color: hsl(var(--clr-white));
+}
+
+@media (max-width: 35rem) {
+  .primary-navigation {
+    --gap: 2rem;
+    --underline-gap: 2rem;
+    position: fixed;
+    z-index: 1000;
+    background-color: black;
+    inset: 0 0 0 30%;
+    list-style: none;
+    padding: min(20rem, 15vh) 2rem;
+    margin: 0;
+    flex-flow: column;
+  }
+  .primary-navigation > li {
+    padding: 0;
+  }
+  .underline-indicators > * {
+    border: 0;
+  }
 }
 
 .tab-list {
