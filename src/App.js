@@ -1,9 +1,9 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
-import Home from "./Home";
-import Crew from "./Crew";
-import Destination from "./Destination";
-import Technology from "./Technology";
+import Home from "./pages/home";
+import Crew from "./pages/crew";
+import Destination from "./pages/destination";
+import Technology from "./pages/technology";
 
 const App = () => {
   const mobileNavMenu = () => {
