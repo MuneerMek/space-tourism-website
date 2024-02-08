@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./styles.css";
+// import "./styles.css";
 
 const Home = () => {
   return (
@@ -29,6 +29,27 @@ const Home = () => {
           Explore
         </Link>
       </div>
+      {/* ----------------------------- */
+      /* Page specific backgrounds     */
+      /* ----------------------------- */}
+      <style>{`
+            body {
+        background-size: cover;
+        background-position: bottom center;
+        background-image: url(assets/home/background-home-mobile.jpg);
+      }
+      @media (min-width: 35rem) {
+        body {
+          background-position: center center;
+          background-image: url(assets/home/background-home-tablet.jpg);
+        }
+      }
+      @media (min-width: 45em) {
+        body {
+          background-image: url(assets/home/background-home-desktop.jpg);
+        }
+      }
+      `}</style>
     </main>
   );
 };
