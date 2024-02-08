@@ -412,10 +412,8 @@ select {
 
 @media (min-width: 45em) {
   .primary-navigation {
-    padding-inline: clamp(3rem, 6vh, 8rem) clamp(3rem, 8vh, 16rem);
-  }
-  .primary-header {
-    padding-top: 2.25rem;
+    padding-inline: clamp(3rem, 6vw, 8rem) clamp(3rem, 8vw, 16rem);
+    margin-block: 2rem;
   }
   .desktop-nav-line {
     height: 1px;
