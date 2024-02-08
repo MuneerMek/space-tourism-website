@@ -4,7 +4,7 @@ import "./css/home.css";
 
 const Home = () => {
   return (
-    <div className="grid-container grid-container--home">
+    <main id="main" className="grid-container grid-container--home">
       <div>
         <h1 className="uppercase text-light fs-500 ff-sans-cond letter-spacing-1">
           So, you want to travel to
@@ -30,7 +30,7 @@ const Home = () => {
           Explore
         </Link>
       </div>
-    </div>
+    </main>
   );
 };
 export default Home;

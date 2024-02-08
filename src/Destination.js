@@ -1,8 +1,8 @@
 const Destination = () => {
   return (
-    <div className="container">
+    <main className="container">
       <p>Destination</p>
-    </div>
+    </main>
   );
 };
 export default Destination;

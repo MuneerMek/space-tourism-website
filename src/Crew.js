@@ -1,8 +1,8 @@
 const Crew = () => {
   return (
-    <div className="container">
+    <main className="container">
       <p>Crew</p>
-    </div>
+    </main>
   );
 };
 export default Crew;

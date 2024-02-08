@@ -1,8 +1,8 @@
 const Technology = () => {
   return (
-    <div className="container">
+    <main className="container">
       <p>Technology</p>
-    </div>
+    </main>
   );
 };
 export default Technology;

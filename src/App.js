@@ -20,6 +20,9 @@ const App = () => {
   };
   return (
     <>
+      <a href="#main" className="skip-to-content">
+        Skip to content
+      </a>
       <header className="primary-header flex">
         <div>
           <img
@@ -28,7 +31,7 @@ const App = () => {
             alt="space tourism logo"
           ></img>
         </div>
-        <div className="desktop-nav-line"></div>
+        {/* <div className="desktop-nav-line"></div> */}
         <button
           onClick={mobileNavMenu}
           className="mobile-nav-toggle"
@@ -49,7 +52,7 @@ const App = () => {
                 to="/"
                 className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
               >
-                <span>00</span>Home
+                <span aria-hidden="true">00</span>Home
               </Link>
             </li>
             <li>
@@ -57,7 +60,7 @@ const App = () => {
                 to="/destination"
                 className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
               >
-                <span>01</span>Destination
+                <span aria-hidden="true">01</span>Destination
               </Link>
             </li>
             <li>
@@ -65,7 +68,7 @@ const App = () => {
                 to="/crew"
                 className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
               >
-                <span>02</span>Crew
+                <span aria-hidden="true">02</span>Crew
               </Link>
             </li>
             <li>
@@ -73,7 +76,7 @@ const App = () => {
                 to="/technology"
                 className="text-white uppercase ff-sans-cond fs-300 letter-spacing-2"
               >
-                <span>03</span>Technology
+                <span aria-hidden="true">03</span>Technology
               </Link>
             </li>
           </ul>
