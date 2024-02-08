@@ -28,6 +28,7 @@ const App = () => {
             alt="space tourism logo"
           ></img>
         </div>
+        <div className="desktop-nav-line"></div>
         <button
           onClick={mobileNavMenu}
           className="mobile-nav-toggle"
