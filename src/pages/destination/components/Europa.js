@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-
-const Destination = () => {
+const Europa = () => {
   return (
     <>
       {/* ----------------------------- */
@@ -24,15 +22,16 @@ const Destination = () => {
         }
       }
       `}</style>
-      <main className="container">
-        <Link
-          to="/destination/europa"
-          className="large-button uppercase ff-serif text-dark bg-white"
-        >
-          Europa Demo
-        </Link>
-      </main>
+      <div>
+        <p className="text-white">
+          01 Pick your destination Moon Mars Europa Titan Europa The smallest of
+          the four Galilean moons orbiting Jupiter, Europa is a winter lover's
+          dream. With an icy surface, it's perfect for a bit of ice skating,
+          curling, hockey, or simple relaxation in your snug wintery cabin. Avg.
+          distance 628 mil. km Est. travel time 3 years
+        </p>
+      </div>
     </>
   );
 };
-export default Destination;
+export default Europa;

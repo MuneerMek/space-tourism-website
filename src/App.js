@@ -1,8 +1,9 @@
 import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
-import Crew from "./pages/crew";
 import Destination from "./pages/destination";
+import Europa from "./pages/destination/components/Europa";
+import Crew from "./pages/crew";
 import Technology from "./pages/technology";
 
 const App = () => {
@@ -85,6 +86,9 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/destination" element={<Destination />} />
+        <Route path="/destination/europa" element={<Europa />} />
+        {/* <Route path="/destination/europa" element={<Europa />} />
+        <Route path="/destination/europa" element={<Europa />} /> */}
         <Route path="/crew" element={<Crew />} />
         <Route path="/technology" element={<Technology />} />
       </Routes>
@@ -93,6 +97,3 @@ const App = () => {
 };
 
 export default App;
-
-// Try to work with React Hooks
-// this time, instead of using a stateful component
