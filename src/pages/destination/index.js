@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import Europa from "./components/Europa";
 
 const Destination = () => {
   return (
@@ -21,14 +21,7 @@ const Destination = () => {
         }
       }
       `}</style>
-      <main className="container">
-        <Link
-          to="/destination=europa"
-          className="large-button uppercase ff-serif text-dark bg-white"
-        >
-          Europa Demo
-        </Link>
-      </main>
+      <Europa />
     </>
   );
 };
