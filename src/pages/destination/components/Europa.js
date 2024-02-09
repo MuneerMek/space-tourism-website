@@ -1,9 +1,6 @@
 const Europa = () => {
   return (
     <>
-      {/* ----------------------------- */
-      /* Page specific backgrounds     */
-      /* ----------------------------- */}
       <style>{`
             body {
         background-size: cover;
@@ -23,7 +20,7 @@ const Europa = () => {
       }
       `}</style>
       <div>
-        <p className="text-white">
+        <p>
           01 Pick your destination Moon Mars Europa Titan Europa The smallest of
           the four Galilean moons orbiting Jupiter, Europa is a winter lover's
           dream. With an icy surface, it's perfect for a bit of ice skating,

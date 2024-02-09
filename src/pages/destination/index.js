@@ -3,9 +3,6 @@ import { Link } from "react-router-dom";
 const Destination = () => {
   return (
     <>
-      {/* ----------------------------- */
-      /* Page specific backgrounds     */
-      /* ----------------------------- */}
       <style>{`
             body {
         background-size: cover;
@@ -26,7 +23,7 @@ const Destination = () => {
       `}</style>
       <main className="container">
         <Link
-          to="/destination/europa"
+          to="/destination=europa"
           className="large-button uppercase ff-serif text-dark bg-white"
         >
           Europa Demo
