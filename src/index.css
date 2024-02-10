@@ -176,6 +176,8 @@ select {
     padding-bottom: max(6rem, 20vh);
     align-items: end;
   }
+  .grid-container--destination {
+  }
 }
 
 /* Screen reader utility class */
@@ -473,6 +475,10 @@ select {
 
 .tab-list {
   --gap: 2rem;
+}
+
+.tab-list > * {
+  background-color: transparent;
 }
 
 .dot-indicators > * {
