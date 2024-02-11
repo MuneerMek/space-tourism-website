@@ -6,7 +6,7 @@ const DestinationBg = () => {
         background-position: bottom center;
         background-image: url(assets/destination/background-destination-mobile.jpg);
       }
-      @media (min-width: 35rem) {
+      @media (min-width: 35.001rem) {
         body {
           background-position: center center;
           background-image: url(assets/destination/background-destination-tablet.jpg);
