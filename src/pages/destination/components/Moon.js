@@ -39,7 +39,7 @@ const Moon = () => {
         </div>
 
         <article>
-          <h2 className="uppercase text-white fs-900 ff-serif">Moon</h2>
+          <h2 className="uppercase text-white fs-800 ff-serif">Moon</h2>
 
           <p className="text-light">
             See our planet as you've never seen it before. A perfect relaxing
@@ -48,11 +48,15 @@ const Moon = () => {
             11 landing sites.
           </p>
 
-          <h3>Avg. distance</h3>
-          <p>384,400 km</p>
+          <h3 className="uppercase ff-sans-cond text-light fs-200 letter-spacing-3">
+            Avg. distance
+          </h3>
+          <p className="uppercase ff-serif fs-500">384,400 km</p>
 
-          <h3>Est. travel time</h3>
-          <p>3 days</p>
+          <h3 className="uppercase ff-sans-cond text-light fs-200 letter-spacing-3">
+            Est. travel time
+          </h3>
+          <p className="uppercase ff-serif fs-500">3 days</p>
         </article>
       </main>
     </>
