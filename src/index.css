@@ -261,7 +261,7 @@ select {
   font-family: var(--ff-sans-cond);
   font-size: var(--fs-500);
   text-transform: uppercase;
-  letter-spacing: 4.72px;
+  letter-spacing: 2.7px;
 }
 
 .numbered-title span {
@@ -345,7 +345,7 @@ select {
   }
 }
 
-@media (max-width: 35rem) {
+@media (max-width: 35.001rem) {
   .primary-navigation {
     --underline-gap: 0.5rem;
     position: fixed;
@@ -538,10 +538,6 @@ select {
   grid-area: content;
 }
 
-.destination-info {
-  padding-inline: 1rem;
-}
-
 .destination-meta {
   flex-flow: column;
   border-top: 1px solid hsl(var(--clr-white) / 0.25);
@@ -557,17 +553,64 @@ select {
   margin-inline: auto;
 }
 
+/* crew layout */
+
+.grid-container--crew {
+  --flow-space: 0;
+  overflow: hidden;
+  grid-template-areas:
+    "title"
+    "image"
+    "dots"
+    "content";
+}
+
+.grid-container--crew > img {
+  grid-area: image;
+  padding-inline: 4rem;
+  border-bottom: 1px solid hsl(var(--clr-white) / 0.25);
+}
+
+.grid-container--crew > .dot-indicators {
+  grid-area: dots;
+}
+
+.grid-container--crew > .crew-info {
+  grid-area: content;
+}
+
+.crew-info > p {
+  margin-block: 0.5rem;
+}
+
+/* grid media queries */
+
 @media (min-width: 35.001em) {
   .numbered-title {
     justify-self: start;
     margin-top: 2rem;
-  }
-  .destination-info {
-    padding-inline: 0;
+    letter-spacing: 3.38px;
   }
   .destination-meta {
     flex-flow: row;
     justify-content: space-evenly;
+  }
+  .grid-container--crew {
+    --flow-space: 3rem;
+    padding-bottom: 0;
+    grid-template-areas:
+      "title"
+      "content"
+      "dots"
+      "image";
+  }
+  .grid-container--crew > img {
+    padding-inline: 0;
+    border: none;
+    transform: translateY(2rem);
+  }
+  .crew-info > p {
+    margin-block: 1rem;
   }
 }
 
@@ -600,12 +643,30 @@ select {
   }
   .numbered-title {
     margin-block: 2rem;
+    letter-spacing: 4.72px;
   }
   .grid-container--destination > img {
     max-width: 90%;
   }
   .destination-meta {
-    --gap: 6rem;
+    --gap: min(6vw, 6rem);
     justify-content: start;
+  }
+  .grid-container--crew {
+    --flow-space: 0;
+    justify-items: start;
+    align-content: start;
+    padding-bottom: 4rem;
+    grid-template-areas:
+      ". title image ."
+      ". content  image ."
+      ". content image ."
+      ". dots image .";
+  }
+  .grid-container--crew > img {
+    transform: translateY(4rem);
+  }
+  .crew-info > p {
+    margin-block: 1.5rem;
   }
 }

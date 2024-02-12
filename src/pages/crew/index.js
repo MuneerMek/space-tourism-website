@@ -1,29 +1,6 @@
+import Commander from "./components/Commander";
+
 const Crew = () => {
-  return (
-    <main className="container">
-      <p>Crew</p>
-      {/* ----------------------------- */
-      /* Page specific backgrounds     */
-      /* ----------------------------- */}
-      <style>{`
-            body {
-        background-size: cover;
-        background-position: bottom center;
-        background-image: url(assets/crew/background-crew-mobile.jpg);
-      }
-      @media (min-width: 35rem) {
-        body {
-          background-position: center center;
-          background-image: url(assets/crew/background-crew-tablet.jpg);
-        }
-      }
-      @media (min-width: 45em) {
-        body {
-          background-image: url(assets/crew/background-crew-desktop.jpg);
-        }
-      }
-      `}</style>
-    </main>
-  );
+  return <Commander />;
 };
 export default Crew;
