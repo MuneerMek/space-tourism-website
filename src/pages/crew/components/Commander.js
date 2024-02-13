@@ -24,14 +24,16 @@ const Commander = () => {
           </button>
         </div>
 
-        <article className="crew-info">
-          <h2
-            className="uppercase ff-serif fs-600"
-            style={{ color: "hsl(var(--clr-white) / 0.5)" }}
-          >
-            Commander
-          </h2>
-          <p className="uppercase ff-serif fs-700">Douglas Hurley</p>
+        <article className="crew-info flow">
+          <header className="flow">
+            <h2
+              className="uppercase ff-serif fs-600"
+              style={{ color: "hsl(var(--clr-white) / 0.5)" }}
+            >
+              Commander
+            </h2>
+            <p className="uppercase ff-serif fs-700">Douglas Hurley</p>
+          </header>
           <p className="text-light">
             Douglas Gerald Hurley is an American engineer, former Marine Corps
             pilot and former NASA astronaut. He launched into space for the

@@ -41,7 +41,7 @@ const Moon = () => {
           </button>
         </div>
 
-        <article className="destination-info">
+        <article className="destination-info flow">
           <h2 className="uppercase text-white fs-800 ff-serif">Moon</h2>
           <p className="text-light">
             See our planet as you've never seen it before. A perfect relaxing
