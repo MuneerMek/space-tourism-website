@@ -12,7 +12,13 @@ const Moon = () => {
           <span aria-hidden="true">01</span> Pick your destination
         </h1>
 
-        <img src="assets/destination/image-moon.png" alt="the moon" />
+        <picture>
+          <source
+            srcSet="assets/destination/image-moon.webp"
+            type="image/webp"
+          />
+          <img src="assets/destination/image-moon.png" alt="the moon" />
+        </picture>
 
         <div className="tab-list underline-indicators flex">
           <button

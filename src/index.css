@@ -504,6 +504,10 @@ select {
   padding-bottom: 4rem;
 }
 
+.grid-container img {
+  width: 100%;
+}
+
 .grid-container * {
   max-width: 50ch;
 }
@@ -523,7 +527,7 @@ select {
     "content";
 }
 
-.grid-container--destination > img {
+.grid-container--destination > picture {
   grid-area: image;
   max-width: 60%;
 }
@@ -554,7 +558,6 @@ select {
 /* crew layout */
 
 .grid-container--crew {
-  --flow-space: 0;
   overflow: hidden;
   grid-template-areas:
     "title"
@@ -563,14 +566,15 @@ select {
     "content";
 }
 
-.grid-container--crew > img {
+.grid-container--crew > picture {
   grid-area: image;
-  padding-inline: 4rem;
+  max-width: 60%;
   border-bottom: 1px solid hsl(var(--clr-white) / 0.25);
 }
 
 .grid-container--crew > .dot-indicators {
   grid-area: dots;
+  margin-block: 1rem;
 }
 
 .grid-container--crew > .crew-info {
@@ -599,8 +603,7 @@ select {
       "dots"
       "image";
   }
-  .grid-container--crew > img {
-    padding-inline: 0;
+  .grid-container--crew > picture {
     transform: translateY(2rem);
   }
   .grid-container--crew > .crew-info {
@@ -642,7 +645,9 @@ select {
     margin-block: 2rem;
     letter-spacing: 4.72px;
   }
-  .grid-container--destination > img {
+  .grid-container--destination > picture,
+  .grid-container--crew > picture,
+  .grid-container--technology > picture {
     max-width: 90%;
   }
   .destination-meta {
@@ -660,8 +665,9 @@ select {
       ". content image ."
       ". dots image .";
   }
-  .grid-container--crew > img {
+  .grid-container--crew > picture {
     transform: translateY(4rem);
+    max-width: 90%;
     border: none;
   }
   .grid-container--crew > .crew-info {
