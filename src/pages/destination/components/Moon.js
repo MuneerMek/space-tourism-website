@@ -1,26 +1,34 @@
 import DestinationBg from "./style";
 
 const Moon = () => {
-  const tabSwitch = (e) => {
+  const keyDownLeft = 37;
+  const keyDownRight = 39;
+  let tabFocus = 0;
+  const changeTabFocus = (e) => {
     const tabList = document.querySelector('[role="tablist"]');
-    const tabs = tabList.querySelectorAll('[role="tabs"]');
-    console.log(e.keyCode);
-    const keyDownLeft = 37;
-    const keyDownRight = 39;
-
-    // Goal: change the tab index of the current tab to -1
-
-    // const nav = document.querySelector(".primary-navigation");
-    // const navToggle = document.querySelector(".mobile-nav-toggle");
-    // const visiblity = nav.getAttribute("data-visible");
-    // if (visiblity === "false") {
-    //   nav.setAttribute("data-visible", true);
-    //   navToggle.setAttribute("aria-expanded", true);
-    // } else {
-    //   nav.setAttribute("data-visible", false);
-    //   navToggle.setAttribute("aria-expanded", false);
-    // }
+    const tabs = tabList.querySelectorAll('[role="tab"]');
+    // change the tabindex of the current tab to -1
+    if (e.keyCode === keyDownLeft || e.keyCode === keyDownRight) {
+      tabs[tabFocus].setAttribute("tabindex", -1);
+    }
+    // if the right key is pushed, move to the next tab on the right
+    // if the left key is pushed, move to the next tab on the left
+    if (e.keyCode === keyDownRight) {
+      tabFocus++;
+      if (tabFocus >= tabs.length) {
+        tabFocus = 0;
+      }
+    } else if (e.keyCode === keyDownLeft) {
+      tabFocus--;
+      if (tabFocus < 0) {
+        tabFocus = tabs.length - 1;
+      }
+    }
+    // change the tabindex of the next tab to 0
+    tabs[tabFocus].setAttribute("tabindex", 0);
+    tabs[tabFocus].focus();
   };
+  const modifyTabs = (e) => changeTabFocus(e);
 
   return (
     <>
@@ -72,7 +80,7 @@ const Moon = () => {
           className="tab-list underline-indicators flex"
           role="tablist"
           aria-label="destination list"
-          onKeyDown={tabSwitch}
+          onKeyDown={modifyTabs}
         >
           <button
             aria-selected="true"
