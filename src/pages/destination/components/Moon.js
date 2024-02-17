@@ -28,7 +28,32 @@ const Moon = () => {
     tabs[tabFocus].setAttribute("tabindex", 0);
     tabs[tabFocus].focus();
   };
-  const modifyTabs = (e) => changeTabFocus(e);
+  const tabClick = () => {
+    const tabList = document.querySelector('[role="tablist"]');
+    const tabs = tabList.querySelectorAll('[role="tab"]');
+    tabs.forEach((tab) => {
+      tab.addEventListener("click", (e) => {
+        const targetTab = e.target;
+        const targetPanel = targetTab.getAttribute("aria-controls");
+        const targetImage = targetTab.getAttribute("data-image");
+
+        const tabContainer = targetTab.parentNode;
+        const mainContainer = tabContainer.parentNode;
+
+        mainContainer.querySelectorAll("[role='tabpanel']").forEach((panel) => {
+          panel.classList.add("hidden");
+        });
+
+        mainContainer
+          .querySelector(`#${targetPanel}`)
+          .classList.remove("hidden");
+
+        mainContainer
+          .querySelector(`#${targetImage}`)
+          .classList.remove("hidden");
+      });
+    });
+  };
 
   return (
     <>
@@ -41,23 +66,21 @@ const Moon = () => {
           <span aria-hidden="true">01</span> Pick your destination
         </h1>
 
-        <picture className="">
+        <picture id="moon-image" role="tabpanel">
           <source
             srcSet="assets/destination/image-moon.webp"
             type="image/webp"
           />
           <img src="assets/destination/image-moon.png" alt="the moon" />
         </picture>
-
-        <picture className="hidden">
+        <picture id="mars-image" role="tabpanel" className="hidden">
           <source
             srcSet="assets/destination/image-mars.webp"
             type="image/webp"
           />
           <img src="assets/destination/image-mars.png" alt="the planet mars" />
         </picture>
-
-        <picture className="hidden">
+        <picture id="europa-image" role="tabpanel" className="hidden">
           <source
             srcSet="assets/destination/image-europa.webp"
             type="image/webp"
@@ -67,8 +90,7 @@ const Moon = () => {
             alt="the planet europa"
           />
         </picture>
-
-        <picture className="hidden">
+        <picture id="titan-image" role="tabpanel" className="hidden">
           <source
             srcSet="assets/destination/image-titan.webp"
             type="image/webp"
@@ -80,13 +102,15 @@ const Moon = () => {
           className="tab-list underline-indicators flex"
           role="tablist"
           aria-label="destination list"
-          onKeyDown={modifyTabs}
+          onKeyDown={changeTabFocus}
+          onClick={tabClick}
         >
           <button
             aria-selected="true"
             role="tab"
             tabIndex={0}
             aria-controls="moon-tab"
+            data-image="moon-image"
             className="uppercase text-light ff-sans-cond fs-300 letter-spacing-2"
           >
             Moon
@@ -96,6 +120,7 @@ const Moon = () => {
             role="tab"
             tabIndex={-1}
             aria-controls="mars-tab"
+            data-image="mars-image"
             className="uppercase text-light ff-sans-cond fs-300 letter-spacing-2"
           >
             Mars
@@ -105,6 +130,7 @@ const Moon = () => {
             role="tab"
             tabIndex={-1}
             aria-controls="europa-tab"
+            data-image="europa-image"
             className="uppercase text-light ff-sans-cond fs-300 letter-spacing-2"
           >
             Europa
@@ -114,13 +140,18 @@ const Moon = () => {
             role="tab"
             tabIndex={-1}
             aria-controls="titan-tab"
+            data-image="titan-image"
             className="uppercase text-light ff-sans-cond fs-300 letter-spacing-2"
           >
             Titan
           </button>
         </div>
 
-        <article className="destination-info flow">
+        <article
+          id="moon-tab"
+          role="tabpanel"
+          className="destination-info flow"
+        >
           <h2 className="uppercase text-white fs-800 ff-serif">Moon</h2>
           <p className="text-light">
             See our planet as you've never seen it before. A perfect relaxing
@@ -144,7 +175,11 @@ const Moon = () => {
           </div>
         </article>
 
-        <article className="hidden destination-info flow">
+        <article
+          id="mars-tab"
+          role="tabpanel"
+          className="hidden destination-info flow"
+        >
           <h2 className="uppercase text-white fs-800 ff-serif">Mars</h2>
           <p className="text-light">
             Don't forget to pack your hiking boots. You'll need them to tackle
@@ -167,7 +202,11 @@ const Moon = () => {
           </div>
         </article>
 
-        <article className="hidden destination-info flow">
+        <article
+          id="europa-tab"
+          role="tabpanel"
+          className="hidden destination-info flow"
+        >
           <h2 className="uppercase text-white fs-800 ff-serif">Europa</h2>
           <p className="text-light">
             The smallest of the four Galilean moons orbiting Jupiter, Europa is
@@ -191,7 +230,11 @@ const Moon = () => {
           </div>
         </article>
 
-        <article className="hidden destination-info flow">
+        <article
+          id="titan-tab"
+          role="tabpanel"
+          className="hidden destination-info flow"
+        >
           <h2 className="uppercase text-white fs-800 ff-serif">Titan</h2>
           <p className="text-light">
             The only moon known to have a dense atmosphere other than Earth,
