@@ -4,24 +4,25 @@ const Moon = () => {
   const keyDownLeft = 37;
   const keyDownRight = 39;
   let tabFocus = 0;
+  const showContent = (parent, content) => {
+    parent.querySelector(`#${content}`).classList.remove("hidden");
+  };
   const changeTabFocus = (e) => {
     const tabList = document.querySelector('[role="tablist"]');
     const tabs = tabList.querySelectorAll('[role="tab"]');
     // change the tabindex of the current tab to -1
     if (e.keyCode === keyDownLeft || e.keyCode === keyDownRight) {
       tabs[tabFocus].setAttribute("tabindex", -1);
-    }
-    // if the right key is pushed, move to the next tab on the right
-    // if the left key is pushed, move to the next tab on the left
-    if (e.keyCode === keyDownRight) {
-      tabFocus++;
-      if (tabFocus >= tabs.length) {
-        tabFocus = 0;
-      }
-    } else if (e.keyCode === keyDownLeft) {
-      tabFocus--;
-      if (tabFocus < 0) {
-        tabFocus = tabs.length - 1;
+      if (e.keyCode === keyDownRight) {
+        tabFocus++;
+        if (tabFocus >= tabs.length) {
+          tabFocus = 0;
+        }
+      } else if (e.keyCode === keyDownLeft) {
+        tabFocus--;
+        if (tabFocus < 0) {
+          tabFocus = tabs.length - 1;
+        }
       }
     }
     // change the tabindex of the next tab to 0
@@ -40,17 +41,18 @@ const Moon = () => {
         const tabContainer = targetTab.parentNode;
         const mainContainer = tabContainer.parentNode;
 
+        tabContainer
+          .querySelector("[aria-selected='true']")
+          .setAttribute("aria-selected", false);
+
+        targetTab.setAttribute("aria-selected", true);
+
         mainContainer.querySelectorAll("[role='tabpanel']").forEach((panel) => {
           panel.classList.add("hidden");
         });
 
-        mainContainer
-          .querySelector(`#${targetPanel}`)
-          .classList.remove("hidden");
-
-        mainContainer
-          .querySelector(`#${targetImage}`)
-          .classList.remove("hidden");
+        showContent(mainContainer, targetPanel);
+        showContent(mainContainer, targetImage);
       });
     });
   };
