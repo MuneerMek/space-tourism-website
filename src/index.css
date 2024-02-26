@@ -673,6 +673,7 @@ select {
     transform: translateY(4rem);
     max-width: 90%;
     border: none;
+    z-index: -1;
   }
   .grid-container--crew > .crew-info {
     --flow-space: 1.5rem;

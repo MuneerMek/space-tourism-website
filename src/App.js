@@ -2,8 +2,6 @@ import React from "react";
 import { Link, Route, Routes } from "react-router-dom";
 import Home from "./pages/home";
 import Destination from "./pages/destination";
-import Moon from "./pages/destination/components/Moon";
-import Europa from "./pages/destination/components/Europa";
 import Crew from "./pages/crew";
 import Technology from "./pages/technology";
 
@@ -87,8 +85,6 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/destination" element={<Destination />} />
-        <Route path="/destination=moon" element={<Moon />} />
-        <Route path="/destination=europa" element={<Europa />} />
         <Route path="/crew" element={<Crew />} />
         <Route path="/technology" element={<Technology />} />
       </Routes>
