@@ -17,6 +17,16 @@ const CrewBg = () => {
           background-image: url(assets/crew/background-crew-desktop.jpg);
         }
       }
+      .underline-indicators > .active{
+      border-color: transparent;
+    }
+    .underline-indicators > .active:hover,
+    .underline-indicators > .active:focus{
+      border-color: hsl(var(--clr-white) / 0.5);
+    }
+    .primary-navigation > li:nth-child(3){
+      border-color: hsl(var(--clr-white));
+    }
       `}</style>
   );
 };

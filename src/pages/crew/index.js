@@ -69,7 +69,7 @@ const Crew = () => {
         <div
           className="dot-indicators flex"
           role="tablist"
-          aria-label="crew list"
+          aria-label="crew member list"
           onKeyDown={changeTabFocus}
           onClick={tabClick}
         >
