@@ -105,7 +105,7 @@ const Destination = () => {
           role="tablist"
           aria-label="destination list"
           onKeyDown={changeTabFocus}
-          onClick={tabClick}
+          onMouseUp={tabClick}
         >
           <button
             aria-selected="true"

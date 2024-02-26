@@ -71,7 +71,7 @@ const Crew = () => {
           role="tablist"
           aria-label="crew member list"
           onKeyDown={changeTabFocus}
-          onClick={tabClick}
+          onMouseUp={tabClick}
         >
           <button
             aria-selected="true"
