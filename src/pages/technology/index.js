@@ -3,22 +3,35 @@ import TechBg from "./style";
 const Technology = () => {
   const keyDownLeft = 37;
   const keyDownRight = 39;
+  const keyDownUp = 38;
+  const keyDownDown = 40;
   let tabFocus = 0;
+  // const showContent = (parent, content) => {
+  //   parent.querySelector(`#${content}`).classList.remove("hidden");
+  // };
   const showContent = (parent, content) => {
-    parent.querySelector(`#${content}`).classList.remove("hidden");
+    const element = parent.querySelector(`#${content}`);
+    if (element) {
+      element.classList.remove("hidden");
+    }
   };
   const changeTabFocus = (e) => {
     const tabList = document.querySelector('[role="tablist"]');
     const tabs = tabList.querySelectorAll('[role="tab"]');
     // change the tabindex of the current tab to -1
-    if (e.keyCode === keyDownLeft || e.keyCode === keyDownRight) {
+    if (
+      e.keyCode === keyDownLeft ||
+      e.keyCode === keyDownRight ||
+      e.keyCode === keyDownUp ||
+      e.keyCode === keyDownDown
+    ) {
       tabs[tabFocus].setAttribute("tabindex", -1);
-      if (e.keyCode === keyDownRight) {
+      if (e.keyCode === keyDownRight || e.keyCode === keyDownDown) {
         tabFocus++;
         if (tabFocus >= tabs.length) {
           tabFocus = 0;
         }
-      } else if (e.keyCode === keyDownLeft) {
+      } else if (e.keyCode === keyDownLeft || e.keyCode === keyDownUp) {
         tabFocus--;
         if (tabFocus < 0) {
           tabFocus = tabs.length - 1;
@@ -40,11 +53,17 @@ const Technology = () => {
 
         const tabContainer = targetTab.parentNode;
         const mainContainer = tabContainer.parentNode;
+        const imageDiv = mainContainer.querySelector(".tech-img");
 
-        tabContainer
-          .querySelector("[aria-selected='true']")
-          .setAttribute("aria-selected", false);
-
+        // tabContainer
+        //   .querySelector("[aria-selected='true']")
+        //   .setAttribute("aria-selected", false);
+        const selectedElement = tabContainer.querySelector(
+          "[aria-selected='true']"
+        );
+        if (selectedElement) {
+          selectedElement.setAttribute("aria-selected", false);
+        }
         targetTab.setAttribute("aria-selected", true);
 
         mainContainer.querySelectorAll("[role='tabpanel']").forEach((panel) => {
@@ -52,7 +71,16 @@ const Technology = () => {
         });
 
         showContent(mainContainer, targetPanel);
-        showContent(mainContainer, targetImage);
+        if (targetImage === "vehicle-image") {
+          imageDiv.classList.add("vehicle-img");
+          imageDiv.classList.remove("spaceport-img", "capsule-img");
+        } else if (targetImage === "spaceport-image") {
+          imageDiv.classList.add("spaceport-img");
+          imageDiv.classList.remove("vehicle-img", "capsule-img");
+        } else if (targetImage === "capsule-image") {
+          imageDiv.classList.remove("vehicle-img", "spaceport-img");
+          imageDiv.classList.add("capsule-img");
+        }
       });
     });
   };
@@ -66,26 +94,20 @@ const Technology = () => {
         <h1 className="numbered-title">
           <span aria-hidden="true">03</span> Space launch 101
         </h1>
-        <div className="tech-img" id="vehicle-image" role="tabpanel"></div>
-        {/* <picture className="tech-img" id="vehicle-image" role="tabpanel">
-          <img
-            src="assets/technology/image-launch-vehicle-landscape.jpg"
-            alt="space rocket"
-          />
-        </picture> */}
+        <div className="tech-img vehicle-img"></div>
         <div
           className="numbered-indicators ff-serif fs-600 flex"
           role="tablist"
-          aria-label="destination list"
+          aria-label="technology list"
           onKeyDown={changeTabFocus}
-          // onMouseUp={tabClick}
+          onMouseUp={tabClick}
         >
           <button
             aria-selected="true"
             role="tab"
             tabIndex={0}
-            aria-controls="1-tab"
-            data-image="1-image"
+            aria-controls="vehicle-tab"
+            data-image="vehicle-image"
           >
             <span>1</span>
           </button>
@@ -93,8 +115,8 @@ const Technology = () => {
             aria-selected="false"
             role="tab"
             tabIndex={-1}
-            aria-controls="2-tab"
-            data-image="2-image"
+            aria-controls="spaceport-tab"
+            data-image="spaceport-image"
           >
             <span>2</span>
           </button>
@@ -102,13 +124,20 @@ const Technology = () => {
             aria-selected="false"
             role="tab"
             tabIndex={-1}
-            aria-controls="3-tab"
-            data-image="3-image"
+            aria-controls="capsule-tab"
+            data-image="capsule-image"
           >
             <span>3</span>
           </button>
         </div>
-        <article className="technology-info flow" id="1-tab" role="tabpanel">
+
+        {/* Articles */}
+
+        <article
+          className="technology-info flow"
+          id="vehicle-tab"
+          role="tabpanel"
+        >
           <header className="flow">
             <h2
               className="uppercase ff-serif fs-600"
@@ -126,9 +155,10 @@ const Technology = () => {
             sight on the launch pad!
           </p>
         </article>
+
         <article
           className="hidden technology-info flow"
-          id="2-tab"
+          id="spaceport-tab"
           role="tabpanel"
         >
           <header className="flow">
@@ -148,9 +178,10 @@ const Technology = () => {
             launch.
           </p>
         </article>
+
         <article
           className="hidden technology-info flow"
-          id="3-tab"
+          id="capsule-tab"
           role="tabpanel"
         >
           <header className="flow">
