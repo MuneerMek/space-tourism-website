@@ -587,6 +587,44 @@ select {
   --flow-space: 0.5rem;
 }
 
+/* technology layout */
+
+.grid-container--technology {
+  overflow: hidden;
+  padding-inline: 0;
+  grid-template-areas:
+    "title"
+    "image"
+    "image"
+    "dots"
+    "content";
+}
+
+.grid-container--technology > .tech-img {
+  grid-area: image;
+  min-width: 100%;
+  min-height: 100%;
+  background-image: url(/public/assets/technology/image-launch-vehicle-landscape.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.grid-container--technology > .numbered-indicators {
+  grid-area: dots;
+  flex-flow: row;
+}
+
+.numbered-indicators > * {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+.grid-container--technology > .technology-info {
+  grid-area: content;
+  --flow-space: 0.5rem;
+}
+
 /* grid media queries */
 
 @media (min-width: 35.001em) {
@@ -616,6 +654,15 @@ select {
   }
   .grid-container--crew > .crew-info > header {
     --flow-space: 0.66rem;
+  }
+  .grid-container--technology {
+    grid-template-areas:
+      "title"
+      "image"
+      "image"
+      "image"
+      "dots"
+      "content";
   }
 }
 
@@ -681,5 +728,42 @@ select {
   }
   .grid-container--crew > .crew-info > header {
     --flow-space: 1rem;
+  }
+  .grid-container--technology {
+    /* --flow-space: 0; */
+    /* justify-items: start; */
+    /* align-content: start; */
+    /* padding-bottom: 4rem; */
+    /* padding-inline: 1; */
+
+    grid-template-columns: 0 1fr 1fr 1fr 1fr 1fr;
+    grid-template-areas:
+      ". title title . image image"
+      ". dots content content image image"
+      ". dots content content image image"
+      ". dots content content image image";
+  }
+  .grid-container--technology > .tech-img {
+    min-height: 85%;
+    min-width: 100%;
+    /* transform: translateX(-2rem); */
+    background-image: url(/public/assets/technology/image-launch-vehicle-portrait.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .grid-container--technology > .numbered-indicators {
+    flex-flow: column;
+  }
+  .numbered-indicators > * {
+    height: 5rem;
+    width: 5rem;
+  }
+  .grid-container--technology > .technology-info {
+    /* --flow-space: 0.5rem; */
+    justify-self: start;
+  }
+  .grid-container--technology > .numbered-title {
+    padding-left: 3em;
   }
 }

@@ -61,44 +61,18 @@ const Technology = () => {
       <TechBg />
       <main
         id="main"
-        className="grid-container grid-container--destination flow"
+        className="grid-container grid-container--technology flow"
       >
         <h1 className="numbered-title">
-          <span aria-hidden="true">01</span> Pick your destination
+          <span aria-hidden="true">03</span> Space launch 101
         </h1>
-
-        <picture id="moon-image" role="tabpanel">
-          <source
-            srcSet="assets/destination/image-moon.webp"
-            type="image/webp"
-          />
-          <img src="assets/destination/image-moon.png" alt="the moon" />
-        </picture>
-        <picture id="mars-image" role="tabpanel" className="hidden">
-          <source
-            srcSet="assets/destination/image-mars.webp"
-            type="image/webp"
-          />
-          <img src="assets/destination/image-mars.png" alt="the planet mars" />
-        </picture>
-        <picture id="europa-image" role="tabpanel" className="hidden">
-          <source
-            srcSet="assets/destination/image-europa.webp"
-            type="image/webp"
-          />
+        <div className="tech-img" id="vehicle-image" role="tabpanel"></div>
+        {/* <picture className="tech-img" id="vehicle-image" role="tabpanel">
           <img
-            src="assets/destination/image-europa.png"
-            alt="the planet europa"
+            src="assets/technology/image-launch-vehicle-landscape.jpg"
+            alt="space rocket"
           />
-        </picture>
-        <picture id="titan-image" role="tabpanel" className="hidden">
-          <source
-            srcSet="assets/destination/image-titan.webp"
-            type="image/webp"
-          />
-          <img src="assets/destination/image-titan.png" alt="the moon titan" />
-        </picture>
-
+        </picture> */}
         <div
           className="numbered-indicators ff-serif fs-600 flex"
           role="tablist"
@@ -134,27 +108,27 @@ const Technology = () => {
             <span>3</span>
           </button>
         </div>
-
-        <article className="tech-info flow" id="1-tab" role="tabpanel">
+        <article className="technology-info flow" id="1-tab" role="tabpanel">
           <header className="flow">
             <h2
               className="uppercase ff-serif fs-600"
               style={{ color: "hsl(var(--clr-white) / 0.5)" }}
             >
-              Commander
+              The terminology...
             </h2>
-            <p className="uppercase ff-serif fs-700">Douglas Hurley</p>
+            <p className="uppercase ff-serif fs-700">Launch vehicle</p>
           </header>
           <p className="text-light">
-            Douglas Gerald Hurley is an American engineer, former Marine Corps
-            pilot and former NASA astronaut. He launched into space for the
-            third time as commander of Crew Dragon Demo-2.
+            A launch vehicle or carrier rocket is a rocket-propelled vehicle
+            used to carry a payload from Earth's surface to space, usually to
+            Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful
+            in operation. Standing 150 metres tall, it's quite an awe-inspiring
+            sight on the launch pad!
           </p>
         </article>
-
         <article
-          className="hidden crew-info flow"
-          id="specialist-tab"
+          className="hidden technology-info flow"
+          id="2-tab"
           role="tabpanel"
         >
           <header className="flow">
@@ -162,21 +136,21 @@ const Technology = () => {
               className="uppercase ff-serif fs-600"
               style={{ color: "hsl(var(--clr-white) / 0.5)" }}
             >
-              Mission Specialist
+              The terminology...
             </h2>
-            <p className="uppercase ff-serif fs-700">Mark Shuttleworth</p>
+            <p className="uppercase ff-serif fs-700">Spaceport</p>
           </header>
           <p className="text-light">
-            Mark Richard Shuttleworth is the founder and CEO of Canonical, the
-            company behind the Linux-based Ubuntu operating system. Shuttleworth
-            became the first South African to travel to space as a space
-            tourist.
+            A spaceport or cosmodrome is a site for launching (or receiving)
+            spacecraft, by analogy to the seaport for ships or airport for
+            aircraft. Based in the famous Cape Canaveral, our spaceport is
+            ideally situated to take advantage of the Earth’s rotation for
+            launch.
           </p>
         </article>
-
         <article
-          className="hidden crew-info flow"
-          id="pilot-tab"
+          className="hidden technology-info flow"
+          id="3-tab"
           role="tabpanel"
         >
           <header className="flow">
@@ -184,64 +158,18 @@ const Technology = () => {
               className="uppercase ff-serif fs-600"
               style={{ color: "hsl(var(--clr-white) / 0.5)" }}
             >
-              Pilot
+              The terminology...
             </h2>
-            <p className="uppercase ff-serif fs-700">Victor Glover</p>
+            <p className="uppercase ff-serif fs-700">Space capsule</p>
           </header>
           <p className="text-light">
-            Pilot on the first operational flight of the SpaceX Crew Dragon to
-            the International Space Station. Glover is a commander in the U.S.
-            Navy where he pilots an F/A-18.He was a crew member of Expedition
-            64, and served as a station systems flight engineer.
+            A space capsule is an often-crewed spacecraft that uses a blunt-body
+            reentry capsule to reenter the Earth's atmosphere without wings. Our
+            capsule is where you'll spend your time during the flight. It
+            includes a space gym, cinema, and plenty of other activities to keep
+            you entertained.
           </p>
         </article>
-
-        <article
-          className="hidden crew-info flow"
-          id="engineer-tab"
-          role="tabpanel"
-        >
-          <header className="flow">
-            <h2
-              className="uppercase ff-serif fs-600"
-              style={{ color: "hsl(var(--clr-white) / 0.5)" }}
-            >
-              Flight Engineer
-            </h2>
-            <p className="uppercase ff-serif fs-700">Anousheh Ansari</p>
-          </header>
-          <p className="text-light">
-            Anousheh Ansari is an Iranian American engineer and co-founder of
-            Prodea Systems. Ansari was the fourth self-funded space tourist, the
-            first self-funded woman to fly to the ISS, and the first Iranian in
-            space.
-          </p>
-        </article>
-
-        {/* <body>
-  00 Home 01 Destination 02 Crew 03 Technology 03 Space launch 101 1 2 3 The
-  terminology... Launch vehicle A launch vehicle or carrier rocket is a
-  rocket-propelled vehicle used to carry a payload from Earth's surface to
-  space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most
-  powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring
-  sight on the launch pad!
-</body>
-<body>
-  00 Home 01 Destination 02 Crew 03 Technology 03 Space launch 101 1 2 3 The
-  terminology... Spaceport A spaceport or cosmodrome is a site for launching (or
-  receiving) spacecraft, by analogy to the seaport for ships or airport for
-  aircraft. Based in the famous Cape Canaveral, our spaceport is ideally
-  situated to take advantage of the Earth’s rotation for launch.
-</body>
-<body>
-  00 Home 01 Destination 02 Crew 03 Technology 03 Space launch 101 1 2 3 The
-  terminology... Space capsule A space capsule is an often-crewed spacecraft
-  that uses a blunt-body reentry capsule to reenter the Earth's atmosphere
-  without wings. Our capsule is where you'll spend your time during the flight.
-  It includes a space gym, cinema, and plenty of other activities to keep you
-  entertained.
-</body>
- */}
       </main>
     </>
   );
