@@ -139,10 +139,7 @@ const Technology = () => {
           role="tabpanel"
         >
           <header className="flow">
-            <h2
-              className="uppercase ff-serif fs-600"
-              style={{ color: "hsl(var(--clr-white) / 0.5)" }}
-            >
+            <h2 className="uppercase letter-spacing-2 text-light ff-sans-cond fs-400">
               The terminology...
             </h2>
             <p className="uppercase ff-serif fs-700">Launch vehicle</p>
@@ -162,10 +159,7 @@ const Technology = () => {
           role="tabpanel"
         >
           <header className="flow">
-            <h2
-              className="uppercase ff-serif fs-600"
-              style={{ color: "hsl(var(--clr-white) / 0.5)" }}
-            >
+            <h2 className="uppercase letter-spacing-2 text-light ff-sans-cond fs-400">
               The terminology...
             </h2>
             <p className="uppercase ff-serif fs-700">Spaceport</p>
@@ -185,10 +179,7 @@ const Technology = () => {
           role="tabpanel"
         >
           <header className="flow">
-            <h2
-              className="uppercase ff-serif fs-600"
-              style={{ color: "hsl(var(--clr-white) / 0.5)" }}
-            >
+            <h2 className="uppercase letter-spacing-2 text-light ff-sans-cond fs-400">
               The terminology...
             </h2>
             <p className="uppercase ff-serif fs-700">Space capsule</p>

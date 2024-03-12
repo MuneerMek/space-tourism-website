@@ -470,7 +470,7 @@ select {
 }
 
 .numbered-indicators {
-  --gap: 2rem;
+  --gap: 1rem;
   flex-direction: column;
   place-items: center;
 }
@@ -630,7 +630,12 @@ select {
 
 .grid-container--technology > .technology-info {
   grid-area: content;
+  align-self: start;
   --flow-space: 0.5rem;
+}
+
+.technology-info h2 {
+  margin-inline: auto;
 }
 
 /* grid media queries */
@@ -671,6 +676,16 @@ select {
       "image"
       "dots"
       "content";
+  }
+  .grid-container--technology > .technology-info {
+    --flow-space: 1rem;
+  }
+  .grid-container--technology > .technology-info > header {
+    --flow-space: 0.66rem;
+  }
+  .numbered-indicators > * {
+    height: 3.75rem;
+    width: 3.75rem;
   }
 }
 
@@ -738,11 +753,6 @@ select {
     --flow-space: 1rem;
   }
   .grid-container--technology {
-    /* --flow-space: 0; */
-    /* justify-items: start; */
-    /* align-content: start; */
-    /* padding-bottom: 4rem; */
-    /* padding-inline: 1; */
     grid-template-columns: 0 1fr 1fr 1fr 1fr 1fr;
     grid-template-areas:
       ". title title . image image"
@@ -764,6 +774,7 @@ select {
     background-image: url(/public/assets/technology/image-space-capsule-portrait.jpg);
   }
   .grid-container--technology > .numbered-indicators {
+    --gap: 2rem;
     flex-flow: column;
   }
   .numbered-indicators > * {
@@ -771,8 +782,11 @@ select {
     width: 5rem;
   }
   .grid-container--technology > .technology-info {
-    /* --flow-space: 0.5rem; */
     justify-self: start;
+    align-self: center;
+  }
+  .technology-info h2 {
+    margin-inline: 0;
   }
   .grid-container--technology > .numbered-title {
     padding-left: 2.5em;
